@@ -1,0 +1,15 @@
+{
+  "name": "gestion-config-finca-catalina",
+  "version": "1.0.0",
+  "description": "Sistema de Gestión de Residuos Orgánicos Agroindustriales de la Finca Catalina",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

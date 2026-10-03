@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finca Catalina - Sistema de Gestión</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Finca Catalina</h1>
+      <p>Sistema de Gestión de Residuos Orgánicos Agroindustriales</p>
+    </header>
+
+    <div id="loginSection" class="section">
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Acceder</button>
+      </form>
+      <div id="loginMsg" class="message"></div>
+    </div>
+
+    <div id="appSection" class="section" style="display:none;">
+      <div class="navbar">
+        <span>Bienvenido</span>
+        <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="lotes">Lotes</button>
+        <button class="tab-btn" data-tab="recepciones">Recepciones</button>
+        <button class="tab-btn" data-tab="consulta">Consultar Lote</button>
+      </div>
+
+      <div id="lotes" class="tab-content active">
+        <h2>Gestión de Lotes</h2>
+        <div id="lotesList" class="list"></div>
+      </div>
+
+      <div id="recepciones" class="tab-content">
+        <h2>Registrar Recepción</h2>
+        <form id="recepcionForm">
+          <select id="loteId" required>
+            <option value="">Seleccionar lote...</option>
+          </select>
+          <input type="number" id="pesoBruto" placeholder="Peso bruto (kg)" step="0.01" required>
+          <input type="number" id="tara" placeholder="Tara (kg)" step="0.01" required>
+          <select id="proceso" required>
+            <option value="">Seleccionar proceso...</option>
+            <option value="Compostaje">Compostaje</option>
+            <option value="Secado">Secado</option>
+            <option value="Trituración">Trituración</option>
+            <option value="Fermentación">Fermentación</option>
+          </select>
+          <button type="submit">Registrar Recepción</button>
+        </form>
+        <div id="recepcionMsg" class="message"></div>
+        <div id="recepcionesList" class="list"></div>
+      </div>
+
+      <div id="consulta" class="tab-content">
+        <h2>Consultar Lote</h2>
+        <form id="consultaForm">
+          <input type="text" id="consultaLoteId" placeholder="ID o código del lote" required>
+          <button type="submit">Consultar</button>
+        </form>
+        <div id="consultaMsg" class="message"></div>
+        <div id="consultaResult" class="result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
